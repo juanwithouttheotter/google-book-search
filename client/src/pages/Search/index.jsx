@@ -7,11 +7,15 @@ class Search extends Component {
 
     }
     searchOnChange = (event) => {
-        
         this.setState({
             inputValue: event.target.value
         })
         console.log(this.state)
+    }
+    handleFormSearch = (event) => {
+        event.preventDefault();
+        console.log(this.state.inputValue);
+        // this.setState({inputValue: ''});
     }
 
     render(){
@@ -21,7 +25,11 @@ class Search extends Component {
                 <SearchBar
                     inputValue={this.inputValue}
                     searchOnChange={this.searchOnChange}
+                    handleFormSearch={this.handleFormSearch}
                 />
+                <div className="my-4"></div>
+                <div classname="results-container">
+                </div>
             </div>
         );
     }

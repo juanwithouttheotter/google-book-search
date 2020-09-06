@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container, Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap'
-
+import "./searchBar.css"
 
 function SearchBar(props) {
     return (
-        <Container fluid="true">
-            <h3>Book Search</h3>
+        <Container>
+            <h3 className="pt-2">Book Search</h3>
             <label htmlFor="search">Book</label>
             <Row>
                 <Col>
@@ -18,7 +18,7 @@ function SearchBar(props) {
                             onChange={props.searchOnChange}
                         />
                         <InputGroup.Append>
-                            <Button variant="secondary">Search</Button>
+                            <Button variant="secondary" onClick={props.handleFormSearch}>Search</Button>
                         </InputGroup.Append>
                     </InputGroup>
                 </Col>
