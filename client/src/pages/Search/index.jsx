@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SearchBar from "../../components/SearchBar";
+import API from "../../API/booksAPI"
 
 class Search extends Component {
     state = {
@@ -12,9 +13,11 @@ class Search extends Component {
         })
         console.log(this.state)
     }
-    handleFormSearch = (event) => {
+    handleFormSearch = async (event) => {
         event.preventDefault();
         console.log(this.state.inputValue);
+        const books = await API.searchGoogleBooks(this.state.inputValue);
+        console.log(books);
         // this.setState({inputValue: ''});
     }
 
@@ -28,7 +31,7 @@ class Search extends Component {
                     handleFormSearch={this.handleFormSearch}
                 />
                 <div className="my-4"></div>
-                <div classname="results-container">
+                <div className="results-container">
                 </div>
             </div>
         );
