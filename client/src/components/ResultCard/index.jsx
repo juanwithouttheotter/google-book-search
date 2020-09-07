@@ -7,7 +7,8 @@ function ResultCard(props) {
             <Row>
                 <Col md={8} xs={6}>
                     <h4>{props.title}</h4>
-                    <h5>Written By {[props.authors]}</h5>
+                    <h5>{props.subtitle}</h5>
+                    <h6>Written By {[props.authors]}</h6>
                 </Col>
                 <Col md={4} xs={6}>
                     <Button variant="info" href={props.link} >View</Button>
